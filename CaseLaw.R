@@ -1,15 +1,24 @@
 library(httr)
 
-base_url <- "https://api.case.law/v1/"
-
-search_case <- function(phrase){
-  request_url <- paste0(base_url, "citations?search=", phrase)
-  response <- GET(request_url) 
-  response_content <- content(response, "parsed")
-  response_content$results
+search_case <- function(phrase, database){
+  case_law_url <- "https://api.case.law/v1/"
+  free_law_url <- "https://www.courtlistener.com/api/rest/v3/"
+  get_response <- function(request_url){
+    response <- GET(request_url) 
+    response_content <- content(response, "parsed")
+    response_content$results
+  }
+  if(database == "case_law"){
+    request_url <- paste0(case_law_url, "citations?search=", phrase)  
+    return(get_response(request_url))
+  } else {
+    request_url <- paste0(free_law_url, "search/?q=", phrase)
+    return(get_response(request_url))
+  }
 }
 
-#########
+
+######### 
 # Text Analysis Book
 library(janeaustenr)
 library(stringr)
@@ -49,8 +58,6 @@ library(edgar)
 
 twilio_8k_items <- get8KItems(cik.no =  0001447669, filing.year=2019)
 twilio_biz_des <- getBusinDescr(cik.no = 0001447669, filing.year = 2019)
-
-
 
 twilio_text <- readLines("Business descriptions text/CopyOfCopyOf1447669_10-K_2019-03-01_0001047469-19-000807.txt")
 twilio_lines <- countLines("Business descriptions text/CopyOfCopyOf1447669_10-K_2019-03-01_0001047469-19-000807.txt")
