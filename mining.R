@@ -98,3 +98,19 @@ mine_case_text <- function(case_html){
   return(plot)
 }
 
+index_case <- function(case){
+  
+}
+
+get_answer <- function(question){
+  # parse content of question
+  
+  # question keywords
+  
+  # query case based on keywords
+  
+  # return suggested cases.
+}
+
+
+
