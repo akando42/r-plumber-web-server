@@ -24,7 +24,7 @@ search_case <- function(phrase, database){
   }
 }
 
-get_case_text <-function(case_response){
+get_case_html <-function(case_response){
   free_law_url <- "https://www.courtlistener.com/api/rest/v3"
   case_number <- case_response$id
   snippet <- case_response$snippet
@@ -105,12 +105,17 @@ index_case <- function(case){
 get_answer <- function(question){
   # parse content of question
   
+  
   # question keywords
+  
   
   # query case based on keywords
   
+  
   # return suggested cases.
+  
 }
+
 
 
 
