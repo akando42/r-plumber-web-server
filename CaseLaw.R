@@ -83,3 +83,16 @@ tidy_twilio %>%
   xlab(NULL) +
   coord_flip()
 
+
+library(dplyr)
+library(janeaustenr)
+
+book_words <- austen_books() %>%
+  unnest_tokens(word, text) %>%
+  count(book,word,sort=TRUE)
+
+book_words
+
+book_words %>%
+  bind_tf_idf(word, book, n) %>%
+  arrange(desc(tf_idf))
