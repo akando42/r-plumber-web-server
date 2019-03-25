@@ -1,16 +1,10 @@
 # plumber.R
 mine <- source("mining.R")
 
-# Running Plumber Server
-# > library(plumber)
-# > r <- plumb("app.R")  
-# > r$run(port=8000)
-
 # mongo "mongodb+srv://cluster0-gyaih.mongodb.net/test" --username admin
 
-#* Return email in a website
+#* Return emails in a website
 #* @param url The website link
-#* @param 
 #* @post /email
 function(url){
   # https://www.rondahayneslaw.com/
@@ -24,7 +18,7 @@ function(url){
   }
   # Parse main page
   main_page <- function(){
-    
+  
   }
 
   # Parse contact page
@@ -32,7 +26,7 @@ function(url){
     
   }
   
-  return(email_list)
+  find_emails(url)
 }
 
 #* Return the precedents around a term 
@@ -47,5 +41,6 @@ function(term,database){
 #* @param question A legal questions like "Can I Get Sued From A Facebook Post"
 #* @post /question
 function(question){
-  return(c("Answer1", "Answer2","Answer3"))
+  answers <- c("Answer1", "Answer2","Answer3")
+  answers
 }
