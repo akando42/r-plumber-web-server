@@ -1,10 +1,11 @@
 library(httr)
 library(tidyverse)
 library(tidytext)
-library(stringr)
 library(wordcloud2)
-library(XML)
 library(R.utils)
+library(XML)
+library(stringr)
+
 library(ggplot2)
 
 search_case <- function(phrase, database){

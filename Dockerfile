@@ -1,8 +1,8 @@
 FROM trestletech/plumber
 MAINTAINER Docker User <troydo42@gmail.com>
-
-RUN R -e "install.packages(c('httr', 'tidyverse','tidytext', 'stringr', 'wordcloud2','XML','R.utils','ggplot2'))"
 COPY * /app/
-WORKDIR /app/
-CMD ["r <- plumb("app.R"]")
-CMD ["r$run(port=8000)"]
+WORKDIR /myapp
+RUN R -e "install.packages(c('httr','rvest'))"
+CMD ["library(plumber)"]
+CMD ["veritasServer <- plumb("app.R")"]
+CMD ["veritasServer$run(port=7777)"]
