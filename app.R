@@ -1,5 +1,7 @@
 # plumber.R
+library(plumber)
 mine <- source("mining.R")
+yelper <- source("yelper.R")
 
 # mongo "mongodb+srv://cluster0-gyaih.mongodb.net/test" --username admin
 
@@ -16,16 +18,6 @@ function(url){
     emails <- html_text(email_links)
     return(emails)
   }
-  # Parse main page
-  main_page <- function(){
-  
-  }
-
-  # Parse contact page
-  contact_page <- function(){
-    
-  }
-  
   find_emails(url)
 }
 
@@ -44,3 +36,6 @@ function(question){
   answers <- c("Answer1", "Answer2","Answer3")
   answers
 }
+
+r <- plumb("app.R")
+r$run(port=8000)
