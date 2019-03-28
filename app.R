@@ -1,9 +1,10 @@
 # plumber.R
-library(plumber)
+library(rvest)
 mine <- source("mining.R")
-yelper <- source("yelper.R")
+#yelper <- source("yelper.R")
 
 # mongo "mongodb+srv://cluster0-gyaih.mongodb.net/test" --username admin
+# install.packages(c("tidyverse", "httr", "tidytext", "stringr", "wordcloud2", "XML", "R.utils", "ggplot2","rvest"))
 
 #* Return emails in a website
 #* @param url The website link
@@ -36,6 +37,3 @@ function(question){
   answers <- c("Answer1", "Answer2","Answer3")
   answers
 }
-
-r <- plumb("app.R")
-r$run(port=8000)
