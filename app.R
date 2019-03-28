@@ -1,8 +1,5 @@
 # plumber.R
-#
 mine <- source("mining.R")
-#yelper <- source("yelper.R")
-
 # mongo "mongodb+srv://cluster0-gyaih.mongodb.net/test" --username admin
 # install.packages(c("tidyverse", "httr", "tidytext", "stringr", "wordcloud2", "XML", "R.utils", "ggplot2","rvest"))
 
