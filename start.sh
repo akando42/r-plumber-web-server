@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
-R 'library(plumber)'
-R 'r <- plumb("app.R")'
-R 'r$run(port=8000)'
+echo -n "Enter your commit message: "
+read ans
+echo $ans
+git commit -am "$ans"
+echo -n "Enter your branch"
+read ans
+echo $ans
+git push origin $ans
