@@ -1,0 +1,12 @@
+library(plumber)
+library(httr)
+library(tidyverse)
+library(tidytext)
+library(wordcloud2)
+library(R.utils)
+library(XML)
+library(stringr)
+library(ggplot2)
+
+r <- plumb("app.R") 
+r$run(port=7777) 
