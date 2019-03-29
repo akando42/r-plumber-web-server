@@ -1,5 +1,6 @@
 library(plumber)
 r <- plumb("app.R") 
 landing<- PlumberStatic$new("./files/static/")
-r$mount(landing)
-r$run(port=7777) 
+r$mount("/",landing)
+r$run(port=7777)
+
