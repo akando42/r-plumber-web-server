@@ -1,0 +1,113 @@
+
+R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> library(plumber)
+Warning message:
+package ‘plumber’ was built under R version 3.4.4 
+> library(httr)
+Warning message:
+package ‘httr’ was built under R version 3.4.4 
+> library(tidyverse)
+── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──
+✔ ggplot2 3.1.0       ✔ purrr   0.3.1  
+✔ tibble  2.0.1       ✔ dplyr   0.8.0.1
+✔ tidyr   0.8.3       ✔ stringr 1.4.0  
+✔ readr   1.3.1       ✔ forcats 0.4.0  
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+Warning messages:
+1: package ‘tidyverse’ was built under R version 3.4.2 
+2: package ‘ggplot2’ was built under R version 3.4.4 
+3: package ‘tibble’ was built under R version 3.4.4 
+4: package ‘tidyr’ was built under R version 3.4.4 
+5: package ‘readr’ was built under R version 3.4.4 
+6: package ‘purrr’ was built under R version 3.4.4 
+7: package ‘dplyr’ was built under R version 3.4.4 
+8: package ‘stringr’ was built under R version 3.4.4 
+> library(tidytext)
+Warning message:
+package ‘tidytext’ was built under R version 3.4.4 
+> library(wordcloud2)
+Warning message:
+package ‘wordcloud2’ was built under R version 3.4.3 
+> library(R.utils)
+Loading required package: R.oo
+Loading required package: R.methodsS3
+R.methodsS3 v1.7.1 (2016-02-15) successfully loaded. See ?R.methodsS3 for help.
+R.oo v1.22.0 (2018-04-21) successfully loaded. See ?R.oo for help.
+
+Attaching package: ‘R.oo’
+
+The following objects are masked from ‘package:methods’:
+
+    getClasses, getMethods
+
+The following objects are masked from ‘package:base’:
+
+    attach, detach, gc, load, save
+
+R.utils v2.8.0 successfully loaded. See ?R.utils for help.
+
+Attaching package: ‘R.utils’
+
+The following object is masked from ‘package:tidyr’:
+
+    extract
+
+The following object is masked from ‘package:utils’:
+
+    timestamp
+
+The following objects are masked from ‘package:base’:
+
+    cat, commandArgs, getOption, inherits, isOpen, parse, warnings
+
+Warning messages:
+1: package ‘R.utils’ was built under R version 3.4.4 
+2: package ‘R.oo’ was built under R version 3.4.4 
+> library(XML)
+Warning message:
+package ‘XML’ was built under R version 3.4.4 
+> library(stringr)
+> library(ggplot2)
+> 
+> r <- plumb("app.R") 
+Warning message:
+package ‘xml2’ was built under R version 3.4.3 
+> r$run(port=7777) 
+Starting server to listen on port 7777
+
+Warning messages:
+1: In as.POSIXlt.POSIXct(x, tz) :
+  unknown timezone 'zone/tz/2018i.1.0/zoneinfo/America/Chicago'
+2: In format.POSIXlt(as.POSIXlt(x, tz), format, usetz, ...) :
+  unknown timezone 'zone/tz/2018i.1.0/zoneinfo/America/Chicago'
+3: In format.POSIXlt(as.POSIXlt(x, tz), format, usetz, ...) :
+  unknown timezone 'zone/tz/2018i.1.0/zoneinfo/America/Chicago'
+4: In format.POSIXlt(as.POSIXlt(x, tz), format, usetz, ...) :
+  unknown timezone 'zone/tz/2018i.1.0/zoneinfo/America/Chicago'
+5: In format.POSIXlt(as.POSIXlt(x, tz), format, usetz, ...) :
+  unknown timezone 'zone/tz/2018i.1.0/zoneinfo/America/Chicago'
+6: In format.POSIXlt(as.POSIXlt(x, tz), format, usetz, ...) :
+  unknown timezone 'zone/tz/2018i.1.0/zoneinfo/America/Chicago'
+
+Execution halted

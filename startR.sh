@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-Rscript init.R
+R -e "source('init.R')"

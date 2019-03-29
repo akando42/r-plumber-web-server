@@ -1,10 +1,20 @@
 # plumber.R
 library(xml2)
+library(httr)
+library(rvest)
+library(tidyverse)
+library(tidytext)
+library(wordcloud2)
+library(R.utils)
+library(XML)
+library(stringr)
+library(ggplot2)
+
 mine <- source("mining.R")
 
 # mongo "mongodb+srv://cluster0-gyaih.mongodb.net/test" --username admin
 
-#* Return emails in a website
+#* Return emails in a websites
 #* @param url The website link
 #* @post /email
 function(url){
