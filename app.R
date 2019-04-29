@@ -1,12 +1,20 @@
 # plumber.R
+library(xml2)
+library(httr)
 library(rvest)
+library(tidyverse)
+library(tidytext)
+library(wordcloud2)
+library(R.utils)
+library(XML)
+library(stringr)
+library(ggplot2)
+
 mine <- source("mining.R")
-#yelper <- source("yelper.R")
 
 # mongo "mongodb+srv://cluster0-gyaih.mongodb.net/test" --username admin
-# install.packages(c("tidyverse", "httr", "tidytext", "stringr", "wordcloud2", "XML", "R.utils", "ggplot2","rvest"))
 
-#* Return emails in a website
+#* Return emails in a websites
 #* @param url The website link
 #* @post /email
 function(url){
@@ -16,7 +24,12 @@ function(url){
     all_links <- html_nodes(landing_page, "a")
     email_locations <- str_which(all_links, "mailto")
     email_links <- all_links[email_locations]
-    emails <- html_text(email_links)
+    #emails <- html_text(email_links)
+    emails <- html_attr(email_links, "href")
+    only_email <- function(email){
+      str_sub(email,8,-1)
+    }
+    emails <- lapply(emails, only_email)
     return(emails)
   }
   find_emails(url)

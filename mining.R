@@ -5,7 +5,6 @@ library(wordcloud2)
 library(R.utils)
 library(XML)
 library(stringr)
-
 library(ggplot2)
 
 search_case <- function(phrase, database){
